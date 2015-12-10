@@ -14,7 +14,7 @@ public class ToDoWebServiceImpl implements ToDoWebService {
 
 
 	@Override
-	public List<Todolist> viewAllTodo(){
+	public List<Todolist> viewAllTodolist(){
 
 		return todo;
 	}
