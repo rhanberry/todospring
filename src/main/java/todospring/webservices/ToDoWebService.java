@@ -13,7 +13,7 @@ public interface ToDoWebService {
     List<Todolist> viewAllTodolist();
     void createTodolist(Todolist todothing);
     void updateTodolist(int pos, Todolist updateTodolist);
-    void deleteTodoList(int id);
+    void deleteTodolist(int id);
 
 
 }

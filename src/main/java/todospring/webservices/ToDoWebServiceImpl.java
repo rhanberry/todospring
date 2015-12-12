@@ -3,19 +3,19 @@ package main.java.todospring.webservices;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import main.java.todospring.model.Todolist;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-
+@Service
 public class ToDoWebServiceImpl implements ToDoWebService {
 
-	private List<Todolist> todo = new ArrayList<>();
+	List<Todolist> todo = new ArrayList<Todolist>();
+	private static Long id = 0L;
 
 
 	@Override
 	public List<Todolist> viewAllTodolist(){
-
 		return todo;
 	}
 
@@ -23,7 +23,7 @@ public class ToDoWebServiceImpl implements ToDoWebService {
 	public void createTodolist(Todolist todothing){
 
 		todothing.setId(id);
-		todo.add(todolist);
+		todo.add(todothing);
 		++id;
 	}
 
@@ -33,10 +33,11 @@ public class ToDoWebServiceImpl implements ToDoWebService {
 	}
 
 	@Override
-	public void deleteTodoList(int id){
-		todolist.remove(id);
+	public void deleteTodolist(int id){
+		todo.remove(id);
 	}
 
 
 
 }
+

@@ -2,10 +2,10 @@ package main.java.todospring.model;
 
 public class Todolist {
 
-	
 
 
-	private int id;
+
+	private long id;
 	private String todoitem;
 	private String tododescription;
 	private boolean isComplete;
@@ -14,7 +14,7 @@ public class Todolist {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -22,7 +22,7 @@ public class Todolist {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -72,10 +72,4 @@ public class Todolist {
 	}
 
 
-
-	@Override
-	public String toString() {
-		return "Todolist [id=" + id + ", todoitem=" + todoitem + ", tododescription=" + tododescription + ", age="
-				+ age + ", isComplete=" + isComplete + "]";
-	}
 }

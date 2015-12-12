@@ -15,7 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!-- Minified angularjs -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script type="text/javascript" src="/jsdir/angularctl.js">
+  <script type="text/javascript" src="/js/angularctl.js">
 
   </script>
 
@@ -23,53 +23,53 @@
 
 <body>
 
-  <div class="alert alert-error" ng-show="error">{{errorMessage}}</div>
-  <div class="row">
-    <form ng-submit="addTodolist(ab)">
-      <div class="col-lg-8">
-        <input class="form-control" placeholder="Enter Task" type="text" ng-model="ab.todoitem" required min="1" />
-        <input class="form-control" placeholder="Enter Description" type="text" ng-model="ab.tododescription" required min="1" />
-        <input class="form-control" placeholder="Task Complete?" type="text" ng-model="ab.iscomplete" required min="1" />
+<div class="alert alert-error" ng-show="error">{{errorMessage}}</div>
+<div class="row">
+  <form ng-submit="addTodolist(ab)">
+    <div class="col-lg-8">
+      <input class="form-control" placeholder="Enter Task" type="text" ng-model="ab.todoitem" required min="1" />
+      <input class="form-control" placeholder="Enter Description" type="text" ng-model="ab.tododescription" required min="1" />
+      <input class="form-control" placeholder="Task Complete?" type="text" ng-model="ab.iscomplete" required min="1" />
 
-      </div>
-    </form>
+    </div>
+  </form>
 
-    <button class="btn btn-primary" ng-disabled="!ab" ng-hide="editMode" ng-click="addTodolist(ab)">Add Entry</button>
-    <button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="editMode" ng-click="updateTodolist(ab)">Save</button>
-    <button type="btn btn-primary" class="btn btn-primary" ng-click="resetTodolistField()">Reset</button>
-  </div>
-  <hr />
+  <button class="btn btn-primary" ng-disabled="!ab" ng-hide="editMode" ng-click="addTodolist(ab)">Add Entry</button>
+  <button type="btn btn-primary" class="btn btn-primary" ng-disabled="!ab" ng-show="editMode" ng-click="updateTodolist(ab)">Save</button>
+  <!--<button type="btn btn-primary" class="btn btn-primary" ng-click="resetTodolistField()">Reset</button>-->
+</div>
+<hr />
 
 
 
-  <div class="alert alert-info" style="width:400px;margin-left:100px;" ng-show="todo.length == 0">
-    No TODO list items!
-  </div>
-  <table class="table table-bordered table-striped" ng-show="todolist.length > 0">
-    <thead>
-      <tr>
-        <th style="text-align: center; width: 25px;">Delete</th>
-        <th style="text-align: center; width: 25px;">Update</th>
-        <th style="text-align: center;">Task Item</th>
-        <th style="text-align: center;">Description</th>
-        <th style="text-align: center;">Is it Complete?</th>
+<div class="alert alert-info" style="width:400px;margin-left:100px;" ng-show="todo.length == 0">
+  No TODO list items!
+</div>
+<table class="table table-bordered table-striped" ng-show="todolist.length > 0">
+  <thead>
+  <tr>
+    <th style="text-align: center; width: 25px;">Delete</th>
+    <th style="text-align: center; width: 25px;">Update</th>
+    <th style="text-align: center;">Task Item</th>
+    <th style="text-align: center;">Description</th>
+    <th style="text-align: center;">Is it Complete?</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="todothing in todo">
-        <td style="width:70px;text-align:center;">
-          <button class="btn btn-mini btn-danger" ng-click="deleteTodolist(todo.indexOf(todothing))">Delete</button>
-        </td>
-        <td style="width:70px;text-align:center;">
-          <button class="btn btn-mini btn-danger" ng-click="editTodolist(todo.indexOf(todothing), todothing)">Update</button>
-        </td>
-        <td>{{todothing.todoitem}}</td>
-        <td>{{todothing.tododescription}}</td>
-        <td>{{todothing.isComplete}}</td>
-      </tr>
-    </tbody>
-  </table>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="todothing in todo">
+    <td style="width:70px;text-align:center;">
+      <button class="btn btn-mini btn-danger" ng-click="deleteTodolist(todo.indexOf(todothing))">Delete</button>
+    </td>
+    <td style="width:70px;text-align:center;">
+      <button class="btn btn-mini btn-danger" ng-click="editTodolist(todo.indexOf(todothing), todothing)">Update</button>
+    </td>
+    <td>{{todothing.todoitem}}</td>
+    <td>{{todothing.tododescription}}</td>
+    <td>{{todothing.isComplete}}</td>
+  </tr>
+  </tbody>
+</table>
 
 
 </body>
